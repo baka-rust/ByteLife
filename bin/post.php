@@ -10,7 +10,7 @@ if(isset($_POST['parent']) && loggedin()) { 				//clean up errors
 	}
 	else {
 		if($_POST['board'] == 'anonymous') {
-			if(checkadmin()) {
+			if(checkadmin($_SESSION['username'])) {
 				$username = $_SESSION['username']; //change this with login script
 			}
 			else {
